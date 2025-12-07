@@ -15,7 +15,19 @@
       <p>{{ product.description }}</p>
       <p>￥{{ product.price }}</p>
       <p>在庫:{{ product.stock }}</p>
+      <button (click)="onProductClick(product)">詳細表示</button>
+      <button (click)="onAddToCart(product)">カートに追加</button>
     </div>
     }
   </div>
+
+  @if(selectedProduct){
+  <div>
+    <h3>選択中:{{ selectedProduct.name }}</h3>
+    <p>説明:{{ selectedProduct.description }}</p>
+    <p>価格:￥{{ selectedProduct.price }}</p>
+    <p>在庫:{{ selectedProduct.stock }}</p>
+    <button (click)="onClearSelection()">選択をクリア</button>
+  </div>
+  }
 </div>
