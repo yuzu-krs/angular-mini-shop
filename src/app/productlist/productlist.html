@@ -1,0 +1,21 @@
+<div>
+  <h2>商品一覧</h2>
+  <div>
+    <p>総商品数:{{ totalProducts }}</p>
+    <p>
+      倉庫総額:￥{{ totalValue | number
+      }}<!--カンマが付く-->
+    </p>
+  </div>
+
+  <div>
+    @for(product of products; track product.id){
+    <div>
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p>￥{{ product.price }}</p>
+      <p>在庫:{{ product.stock }}</p>
+    </div>
+    }
+  </div>
+</div>
